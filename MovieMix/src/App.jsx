@@ -1,22 +1,21 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { fetchData } from './utils/api'
-
-
+import HomePages from './Pages/HomePages'
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import Navbar from './Components/Navbar'
+import SearchResult from './Pages/SearchResult'
 function App() {
- useEffect(()=>{
-     fetchapitesting();
- },[])
- const fetchapitesting=()=>{
-    fetchData('/movie/popular')
-     .then((res)=>{
-      console.log(res)
-      console.log("done")
-     })
- }
+ 
   return (
     <>
-      
+      <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<HomePages/>}/>
+        <Route path="/search/:query" element={<SearchResult/>}/>
+      </Routes>
+
+      </BrowserRouter>
     </>
   )
 }

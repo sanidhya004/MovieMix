@@ -1,0 +1,64 @@
+.herobanner{
+    background-color:transparent ;
+    min-height:90vh;
+    
+    display: flex;
+
+}
+.herobanner_left{
+   width: 40%;
+   min-height: 100%;
+ 
+   background-color: transparent;
+   display: flex;
+   padding-left: 10%;
+   align-items: center;
+}
+.h1{
+     font-size: 90px;
+   
+     margin:0px;
+}
+.p{
+   
+    margin-top:0px;
+}
+.herobanner_right{
+    width: 60%;
+    min-height: 100%;
+   
+    background-color: transparent;
+    background-image: url('https://images.news18.com/ibnlive/uploads/2022/09/avatar-166312999116x9.jpg');
+    background-size: cover;
+    -webkit-filter: grayscale(100%);
+     filter: grayscale(100%);
+     z-index: 1;
+   
+}
+.herobanner_right:hover{
+     cursor: pointer;
+     filter: grayscale(0%);
+}
+.search{
+  
+     padding: 10px;
+     padding-right: 0px;
+   position: absolute;
+     min-width: 700px;
+     z-index: 2;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    background-color: white;
+}
+input{
+     height: 60px;
+     border: none;
+     min-width: 67%;
+}
+
+.button{
+     height: 60px;
+     background-color: black;
+     color:white;
+     min-width:30%;
+}
