@@ -11,8 +11,9 @@ const useFetch=(url)=>{
           setLoading("Loading...")
           fetchData(url)
           .then((res)=>{
-           console.log(res)
+          
            setData(res)
+           console.log(res)
            setLoading(false)
           })
           .catch((err)=>{

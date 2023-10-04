@@ -1,0 +1,25 @@
+@import "../../mixin.scss";
+.card{
+   
+     height:250px;
+     width: 150px;
+     background-color: red;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     background-image: url("https://img.buzzfeed.com/buzzfeed-static/static/2022-04/4/20/asset/0f12255e2129/sub-buzz-817-1649105149-10.jpg");
+     margin: 10px;
+     @include md{
+          height: 300px;
+          width: 200px;
+     }
+     background-size: cover;
+     border-radius: 10px;
+     -webkit-filter: grayscale(100%);
+     filter: grayscale(100%);
+     
+     
+}
+.card:hover{
+     filter: grayscale(0%);
+     transform: scale(1.02);
+     transition: transform 450ms; 
+}

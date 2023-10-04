@@ -1,55 +1,117 @@
+@import "../../mixin.scss";
 .herobanner{
     background-color:transparent ;
-    min-height:90vh;
+    min-height:50vh;
     
     display: flex;
 
 }
 .herobanner_left{
-   width: 40%;
+   width: 100%;
    min-height: 100%;
- 
+   margin-bottom:100px ;
+   text-align: center;
+   align-items: center;
    background-color: transparent;
    display: flex;
    padding-left: 10%;
+   z-index: 2;
    align-items: center;
+   @include md{
+      width: 40%;
+   }
+   .search{
+  
+     padding: 10px;
+     padding-right: 0px;
+     position: absolute;
+     min-width: 80%;
+     z-index: 2;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    @include md{
+     min-width: 700px;
+    }
+
+    background-color: white;
+ } 
+ .backdrop{
+     width: 100%;
+     height: 50vh;
+     position: absolute;
+     top: 0;
+     left: 0;
+     
+     opacity: 0.5;
+     overflow: hidden;
+     -webkit-filter: grayscale(100%);
+     filter: grayscale(90%);
+     
+     .lazy-load-image-background {
+         width: 100%;
+         height: 100%;
+         img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             object-position: center;
+         }
+     }
+     @include md{
+           visibility: hidden;
+     }
+ }
+  
+}
+.content{
+      z-index: 2;
 }
 .h1{
-     font-size: 90px;
-   
+     font-size: 70px;
+     z-index: 2;
      margin:0px;
+     @include md{
+          font-size: 80px;
+     }
 }
 .p{
    
     margin-top:0px;
 }
 .herobanner_right{
-    width: 60%;
-    min-height: 100%;
-   
+    width: 0px;
+    visibility: hidden;
+    height: 0vh;
+   opacity: .8;
     background-color: transparent;
-    background-image: url('https://images.news18.com/ibnlive/uploads/2022/09/avatar-166312999116x9.jpg');
-    background-size: cover;
+   @include md{
+      width: 60%;
+      height: 90vh;
+      visibility: visible;
+   }
     -webkit-filter: grayscale(100%);
      filter: grayscale(100%);
      z-index: 1;
+     object-fit: contain;
+img{
+      object-fit: cover;
+      object-position: center;
+      visibility: hidden;
+      @include md{
+          width: 100%;
+          height: 90vh;
+          visibility: visible;
+       }
+      
+ }
    
 }
 .herobanner_right:hover{
      cursor: pointer;
      filter: grayscale(0%);
+     opacity: 1;
+     transition-delay: 0.1s;
 }
-.search{
-  
-     padding: 10px;
-     padding-right: 0px;
-   position: absolute;
-     min-width: 700px;
-     z-index: 2;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-    background-color: white;
-}
 input{
      height: 60px;
      border: none;
